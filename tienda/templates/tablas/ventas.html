@@ -1,0 +1,14 @@
+{% extends 'base/index.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+	<div class="container">
+
+<br><h1 style="font-size: 30px; text-align: center;">V E N T A S</h1>
+<br>
+<div class="alert alert-info">Elige qué tipo de productos quieres comprar</div>
+
+<br>
+	{% include 'tablas/tablaventas.html' %}
+{% endblock %}

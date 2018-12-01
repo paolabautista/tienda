@@ -1,0 +1,26 @@
+{% extends 'base/index.html' %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+<div class ='container'>
+	<div class="row justify-content-md-center">
+		<div class="colum-8">
+			<h1>Realizar Venta</h1>
+			<form method="GET" href="{% url 'productos:pagar' %}" >
+				<script type="text/javascript" src="{% static 'js/total.js' %}"></script>
+				{% csrf_token %}
+				{{ form.as_p }}
+				<label>Num.Productos:</label>
+				<input class="form-control" type="number" id="cantidad" name="cantidad" placeholder="cantidad" min="0" onclick="evaluar()">
+				<label>Total de compra:</label>
+				<input class="form-control" type="text" id="total" name="total" placeholder="total">
+				<br>
+				<button type ='submit' class="btn btn-outline-success" id="pagar" disabled="false">Pagar</button>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<br><h1 style="font-size: 30px; text-align: center;">V E N T A S</h1>
+<br>
+<br><p>Elige qué tipo de productos quieres comprar</p>
+<br>
+
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <a href="{% url 'productos:vistaProd' %}">Galletas</a>
+    <span class="badge badge-primary badge-pill">14</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <a href="">Frituras</a>
+    <span class="badge badge-primary badge-pill">2</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <a href="">Refrescos</a>
+    <span class="badge badge-primary badge-pill">1</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <a href="">Chocolates</a>
+    <span class="badge badge-primary badge-pill">1</span>
+  </li>
+</ul>

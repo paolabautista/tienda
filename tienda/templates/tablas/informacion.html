@@ -1,0 +1,36 @@
+
+	<!-- Aquí pegamos el código de la pagina de bootstrap que queramos apra nuestra tabla -->
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">Id del producto</th>
+				<th scope="col">Nombre del producto</th>
+				<th scope="col">Descripción</th>
+				<th scope="col">Costo</th>
+				<th scope="col">Existencias</th>
+				<th scope="col">Categoria</th>
+				<th scope="col" colspan="2">Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+  	<!-- Iniciamos un ciclo for porque aquí
+  		vamos a incluir la información de la BD -->
+  		{% for producto in object_list %}
+  		<tr>
+  			<th scope="row">{{ producto.id }}</th>
+  			<td>{{ producto.nombreProd }}</td>
+  			<td>{{ producto.descripcion }}</td>
+  			<td>{{ producto.costo }}</td>
+  			<td>{{ producto.existencias }}</td>
+  			<td>{{ producto.categoria.nombreC }}</td>
+        <td><a href="{% url 'productos:editarRegistro' producto.id %}" class="btn mb-3">Editar</a></td>
+        <td><a href="{% url 'productos:eliminarRegistro' producto.id %}" class="btn mb-3">Borrar</a></td>
+
+  		</tr>
+  		{% empty %}
+  		<tr>
+  			<td>Por el momento no contamos con productos</td>
+  		</tr>
+  		{% endfor %}
+  	</tbody>
+  </table>
